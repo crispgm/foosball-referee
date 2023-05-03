@@ -1,0 +1,17 @@
+{
+  "name": "foosball-referee",
+  "version": "1.0.0",
+  "description": "Foosball referee web app",
+  "main": "index.js",
+  "scripts": {
+    "serve": "http-server .",
+    "lint": "eslint --ext .js .",
+    "build": "./scripts/build.sh"
+  },
+  "author": "David Zhang",
+  "license": "MIT",
+  "dependencies": {
+    "eslint": "^8.39.0",
+    "http-server": "^14.1.1"
+  }
+}

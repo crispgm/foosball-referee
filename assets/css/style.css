@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (min-width: 640px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+body {
+  background-color: #343a40;
+  color: #f8f9fa;
+  font-family: 'Open Sans', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+a {
+  color: inherit;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+.main {
+  bottom: 2rem;
+  margin: 1rem;
+  text-align: left;
+}
+
+@media screen and (min: 640px) {
+  .wrapper {
+    width: 48rem;
+  }
+}
+
+footer {
+  border-top: 1px dotted #f8f9fa;
+  margin: 1rem 0.4rem 0 0.4rem;
+  padding: 1rem 0 0;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+}
+
+.panel {
+  text-align: center;
+}
+
+#timer {
+  width: 40%;
+}
+
+#team1,
+#team2 {
+  width: 30%;
+}
+
+.countdown-timer {
+  border: 3px solid #f8f9fa;
+  border-radius: 12px;
+  font-size: 4.8rem;
+  height: 10rem;
+  line-height: 10rem;
+}
+
+.countdown-warning {
+  border: 3px solid #fab005;
+}
+
+.countdown-operator {
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem 0 0;
+}
+
+.countdown-operator button {
+  border-radius: 12px;
+  font-size: 1.6rem;
+  height: 5rem;
+  line-height: 5rem;
+  width: 6rem;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+  <title>Foosball Referee</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/modern-normalize@0.6.0/modern-normalize.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="/assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="app">
+    <div class="wrapper">
+      <div class="main">
+        <div class="scoreboard">
+          <div class="panel" id="team1">
+          </div>
+          <div class="panel" id="timer">
+            <div class="countdown-timer" v-bind:class="[countdownWarning ? 'countdown-warning': '']">
+              {{countdownDisplay}}
+            </div>
+            <div class="countdown-operator">
+              <div class="countdown-10s">
+                <button class="btn-10s" @click="handleTimer(10)">10s</button>
+              </div>
+              <div class="countdown-15s">
+                <button class="btn-15s" @click="handleTimer(15)">15s</button>
+              </div>
+            </div>
+          </div>
+          <div class="panel" id="team2">
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      Copyright &copy; David Zhang. <a href="https://github.com/foostime/referee">GitHub</a>
+    </footer>
+  </div>
+</body>
+
+<script type="text/javascript" src="/app.js"></script>
+
+</html>
