@@ -18,12 +18,20 @@
             <div class="countdown-timer" v-bind:class="[countdownWarning ? 'countdown-warning': '']">
               {{countdownDisplay}}
             </div>
-            <div class="countdown-operator">
+            <div class="countdown-pause-reset">
+              <div class="countdown-reset">
+                <button class="btn-reset" @click="handleResetTimer()">Reset</button>
+              </div>
+              <div class="countdown-pause">
+                <button class="btn-pause" @click="handlePauseTimer()">Pause</button>
+              </div>
+            </div>
+            <div class="countdown-set-timer">
               <div class="countdown-10s">
-                <button class="btn-10s" @click="handleTimer(10)">10s</button>
+                <button class="btn-10s" @click="handleSetTimer(10)">10s</button>
               </div>
               <div class="countdown-15s">
-                <button class="btn-15s" @click="handleTimer(15)">15s</button>
+                <button class="btn-15s" @click="handleSetTimer(15)">15s</button>
               </div>
             </div>
           </div>

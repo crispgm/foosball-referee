@@ -92,16 +92,26 @@ footer {
   border: 3px solid #fab005;
 }
 
-.countdown-operator {
+.countdown-set-timer,
+.countdown-pause-reset {
   display: flex;
   justify-content: space-around;
-  margin: 1rem 0 0;
+  margin: .6rem 0 0;
 }
 
-.countdown-operator button {
+.countdown-set-timer button {
   border-radius: 12px;
   font-size: 1.6rem;
-  height: 5rem;
-  line-height: 5rem;
-  width: 6rem;
+  height: 6rem;
+  line-height: 6rem;
+  width: 7.8rem;
+}
+
+.countdown-pause-reset button {
+  background-color: #ffa8a8;
+  border-radius: 12px;
+  font-size: 1.6rem;
+  height: 3rem;
+  line-height: 3rem;
+  width: 7.8rem;
 }
