@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+mkdir docs
 cp -r src/* docs/
 
 sed -i 's/src="\/app.js"/src="\/referee\/app.js"/g' docs/index.html

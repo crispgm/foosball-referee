@@ -17,11 +17,10 @@ jobs:
         uses: actions/checkout@v3
       - name: 'Publish'
         run: |
-          cd docs
           git config --global user.name 'crispbot'
           git config --global user.email 'crispgm@users.noreply.github.com'
           ./scripts/build.sh
-          git add .
+          git add ./docs
           git commit --allow-empty -m "Deployed at $(date +%Y%m%d-%H:%M:%S)"
           git remote set-url --push origin https://crispgm:${{ secrets.ACCESS_TOKEN }}@github.com/foostime/referee
           git push origin main
