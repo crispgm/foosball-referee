@@ -92,6 +92,7 @@ var app = new Vue({
     handleResetTimer: function () {
       console.log('Reset timer');
       this.resetTimer();
+      this.countdownWarning = false;
       this.countdownTimer = 0;
       this.countdownDisplay = '0.0';
       this.countdownState = 'ready';

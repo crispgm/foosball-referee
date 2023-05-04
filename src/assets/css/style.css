@@ -170,6 +170,7 @@ a:hover {
 
 .countdown-set-timer button {
   border-radius: 12px;
+  color: #343a40;
   font-size: 3rem;
   height: 8rem;
   width: inherit;
@@ -178,6 +179,7 @@ a:hover {
 .countdown-pause-reset button {
   background-color: #ffa8a8;
   border-radius: 12px;
+  color: #343a40;
   font-size: 1.6rem;
   height: 3rem;
   width: inherit;
