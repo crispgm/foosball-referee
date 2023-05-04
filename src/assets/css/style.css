@@ -111,6 +111,8 @@ a:hover {
 
 .panel-btn {
   border-radius: 12px;
+  color: #343a40;
+  font-weight: bold;
   height: 4.8rem;
   width: 33%;
   margin: 0 .4rem 0 0;
@@ -156,6 +158,8 @@ a:hover {
 }
 
 .countdown-btn {
+  color: #343a40;
+  font-weight: bold;
   width: 100%;
   margin: 0.4rem 0.8rem 0 0;
 }
