@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (min-width: 640px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+body {
+  background-color: #343a40;
+  color: #f8f9fa;
+  font-family: 'Open Sans', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+a {
+  color: inherit;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+.main {
+  bottom: 2rem;
+  margin: 1rem;
+  text-align: left;
+}
+
+@media screen and (min: 640px) {
+  .wrapper {
+    width: 48rem;
+  }
+}
+
+.title {
+  font-size: 3rem;
+}
+
+.about {
+  font-size: 1rem;
+  border-bottom: 1px dotted #f8f9fa;
+  margin: 0 0 0.4rem;
+  padding: 0.4rem 0;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 0.8rem;
+}
+
+.panel {
+  padding: 0.8rem 0.4rem 0.8rem 0;
+  text-align: center;
+  margin: 1rem 0 0;
+}
+
+.panel:last-child {
+  border: 0;
+  padding: 0.8rem 0 0.8rem 0.4rem;
+}
+
+#team1,
+#team2 {
+  width: 50%;
+}
+
+.panel-title {
+  font-size: 2rem;
+  padding: 0.8rem 0;
+  text-align: left;
+}
+
+.panel-section {
+  margin: 0 0 .8rem 0;
+  text-align: left;
+}
+
+.panel-subtitle {
+  padding: 0.8rem 0 .4rem;
+}
+
+.panel-operator {
+  display: flex;
+  justify-content: space-around;
+}
+
+.panel-btn {
+  border-radius: 12px;
+  height: 4.8rem;
+  width: 33%;
+  margin: 0 .4rem 0 0;
+}
+
+.panel-btn:last-child {
+  margin: 0;
+}
+
+.panel-btn-large {
+  width: 50%;
+}
+
+.panel-btn-clicked {
+  background-color: #ffa8a8;
+}
+
+.timer {
+  text-align: center;
+}
+
+.countdown-timer {
+  border: 3px solid #f8f9fa;
+  border-radius: 12px;
+  font-size: 4.8rem;
+  height: 10rem;
+  line-height: 10rem;
+}
+
+.countdown-running {
+  border: 3px solid #8ce99a;
+}
+
+.countdown-warning {
+  border: 3px solid #fab005;
+}
+
+.countdown-set-timer,
+.countdown-pause-reset {
+  display: flex;
+  justify-content: space-around;
+  margin: 0.6rem 0 0;
+}
+
+.countdown-btn {
+  width: 100%;
+  margin: 0.4rem 0.8rem 0 0;
+}
+
+.countdown-btn:last-child {
+  margin: 0.4rem 0 0;
+}
+
+.countdown-set-timer button {
+  border-radius: 12px;
+  font-size: 3rem;
+  height: 8rem;
+  width: inherit;
+}
+
+.countdown-pause-reset button {
+  background-color: #ffa8a8;
+  border-radius: 12px;
+  font-size: 1.6rem;
+  height: 3rem;
+  width: inherit;
+}
