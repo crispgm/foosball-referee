@@ -1,6 +1,16 @@
 var app = new Vue({
   el: '#app',
   data: {
+    team1: {
+      games: 0,
+      timeouts: 0,
+      resets: 0,
+    },
+    team2: {
+      games: 0,
+      timeouts: 0,
+      resets: 0,
+    },
     countdownTimer: 0,
     countdownDisplay: 0.0,
     countdownTimeout: null,
@@ -29,6 +39,32 @@ var app = new Vue({
     }
   },
   methods: {
+    handleButton: function(team, key, value) {
+      console.log(`Clicked Team: ${team} Key: ${key} Value: ${value}`);
+      if (team != 1 && team != 2) {
+        return;
+      }
+      if (key != 'games' && key != 'timeouts' && key != 'resets') {
+        return
+      }
+
+      let data;
+      if (team == 1) {
+        data = this.team1
+      } else {
+        data = this.team2
+      }
+      if (data[key] == value) {
+        data[key] = 0;
+      } else {
+        data[key] = value
+      }
+      if (team == 1) {
+        this.team1 = data
+      } else {
+        this.team2 = data
+      }
+    },
     setTimer: function() {
       this.countdownTimeout = window.setTimeout(() => {
         this.countdownTimer--;
