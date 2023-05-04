@@ -4,8 +4,8 @@
   "description": "Foosball referee web app",
   "main": "index.js",
   "scripts": {
-    "serve": "http-server .",
-    "lint": "eslint --ext .js .",
+    "serve": "http-server ./src",
+    "lint": "eslint --ext .js ./src",
     "build": "./scripts/build.sh"
   },
   "author": "David Zhang",
