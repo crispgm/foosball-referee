@@ -12,7 +12,7 @@ body {
   background-color: #343a40;
   color: #f8f9fa;
   font-family: 'Open Sans', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   height: 100%;
@@ -74,7 +74,6 @@ button {
 .about {
   font-size: 1rem;
   border-bottom: 1px dotted #f8f9fa;
-  margin: 0 0 0.4rem;
   padding: 0.4rem 0;
 }
 
@@ -87,7 +86,6 @@ button {
 .panel {
   padding: 0.8rem 0.4rem 0.8rem 0;
   text-align: center;
-  margin: 1rem 0 0;
 }
 
 .panel:last-child {
@@ -107,12 +105,12 @@ button {
 }
 
 .panel-section {
-  margin: 0 0 .8rem 0;
+  margin: 0 0 0.8rem 0;
   text-align: left;
 }
 
 .panel-subtitle {
-  padding: 0.8rem 0 .4rem;
+  padding: 0.8rem 0 0.4rem;
 }
 
 .panel-operator {
@@ -125,7 +123,7 @@ button {
   font-weight: bold;
   height: 4.8rem;
   width: 33%;
-  margin: 0 .4rem 0 0;
+  margin: 0 0.4rem 0 0;
 }
 
 .panel-btn:last-child {
@@ -169,6 +167,7 @@ button {
 
 .countdown-btn {
   color: #343a40;
+  font-size: 1.2rem;
   font-weight: bold;
   width: 100%;
   margin: 0.4rem 0.8rem 0 0;
