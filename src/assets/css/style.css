@@ -3,15 +3,9 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 12px;
   height: 100%;
   width: 100%;
-}
-
-@media screen and (min-width: 640px) {
-  html {
-    font-size: 24px;
-  }
 }
 
 body {
@@ -28,6 +22,17 @@ body {
   word-wrap: break-word;
 }
 
+@media screen and (min-width: 640px) {
+  html {
+    font-size: 18px;
+  }
+
+  body {
+    width: 640px;
+    margin: 0 auto;
+  }
+}
+
 a {
   color: inherit;
   font-weight: 400;
@@ -36,6 +41,12 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+button {
+  border: 0;
+  border-radius: 8px;
+  color: inherit;
 }
 
 .wrapper {
@@ -110,7 +121,6 @@ a:hover {
 }
 
 .panel-btn {
-  border-radius: 12px;
   color: #343a40;
   font-weight: bold;
   height: 4.8rem;
@@ -136,7 +146,7 @@ a:hover {
 
 .countdown-timer {
   border: 3px solid #f8f9fa;
-  border-radius: 12px;
+  border-radius: 8px;
   font-size: 4.8rem;
   height: 10rem;
   line-height: 10rem;
@@ -169,7 +179,6 @@ a:hover {
 }
 
 .countdown-set-timer button {
-  border-radius: 12px;
   color: #343a40;
   font-size: 3rem;
   height: 8rem;
@@ -178,7 +187,6 @@ a:hover {
 
 .countdown-pause-reset button {
   background-color: #ffa8a8;
-  border-radius: 12px;
   color: #343a40;
   font-size: 1.6rem;
   height: 3rem;
