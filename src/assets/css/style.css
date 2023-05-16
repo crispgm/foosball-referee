@@ -69,16 +69,19 @@ button {
 
 .title {
   font-size: 3rem;
+  padding: 0 0 0.4rem 0;
 }
 
 .about {
   font-size: 1rem;
-  border-bottom: 1px dotted #f8f9fa;
+  border-top: 1px dotted #f8f9fa;
+  margin: 0.8rem 0 0;
   padding: 0.4rem 0;
 }
 
 .scoreboard {
   display: flex;
+  border-top: 1px dotted #f8f9fa;
   justify-content: space-between;
   padding: 0 0 0.8rem;
 }
@@ -100,7 +103,7 @@ button {
 
 .panel-title {
   font-size: 2rem;
-  padding: 0.8rem 0;
+  padding: 0.8rem 0 0;
   text-align: left;
 }
 
@@ -121,7 +124,7 @@ button {
 .panel-btn {
   color: #343a40;
   font-weight: bold;
-  height: 4.8rem;
+  height: 4.2rem;
   width: 33%;
   margin: 0 0.4rem 0 0;
 }
