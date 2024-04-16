@@ -49,6 +49,7 @@ var app = new Vue({
       }
 
       let data;
+      let onOff = true;
       if (team == 1) {
         data = this.team1
       } else {
@@ -56,6 +57,7 @@ var app = new Vue({
       }
       if (data[key] == value) {
         data[key] = 0;
+        onOff = false;
       } else {
         data[key] = value
       }
@@ -63,6 +65,20 @@ var app = new Vue({
         this.team1 = data
       } else {
         this.team2 = data
+      }
+
+      if (key == 'timeouts') {
+        if (onOff) {
+          this.handleSetTimer(30);
+        } else {
+          this.handleResetTimer();
+        }
+      } else if (key == 'games') {
+        if (onOff && value != 3) {
+          this.handleSetTimer(90);
+        } else {
+          this.handleResetTimer();
+        }
       }
     },
     setTimer: function() {
