@@ -23,8 +23,16 @@ var app = new Vue({
     defaultTheme: 'minimal',
     themes: [
       {
+        name: 'Botanical',
+        value: 'botanical',
+      },
+      {
         name: 'Minimal',
         value: 'minimal',
+      },
+      {
+        name: 'Mizu',
+        value: 'mizu',
       },
       {
         name: 'Olivia',
