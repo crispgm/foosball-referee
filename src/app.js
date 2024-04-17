@@ -150,7 +150,7 @@ var app = new Vue({
           this.countdownState = 'stop';
 
           this.pushLog('Player ran out of time');
-          if (typeof navigator?.vibrate === 'function') {
+          if (typeof navigator.vibrate === 'function') {
             navigator.vibrate(500);
           }
         }
