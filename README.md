@@ -22,4 +22,4 @@ npm run serve
 
 ## Credit
 
-This web app is highly inpisred by FoosRef app.
+This web app is highly inspired by FoosRef app.
