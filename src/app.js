@@ -4,11 +4,13 @@ var app = new Vue({
     team1: {
       games: 0,
       timeouts: 0,
+      jars: 0,
       resets: 0,
     },
     team2: {
       games: 0,
       timeouts: 0,
+      jars: 0,
       resets: 0,
     },
     countdownTimer: 0,
@@ -68,7 +70,7 @@ var app = new Vue({
       if (team != 1 && team != 2) {
         return;
       }
-      if (key != 'games' && key != 'timeouts' && key != 'resets') {
+      if (key != 'games' && key != 'timeouts' && key != 'jars' && key != 'resets') {
         return;
       }
 
@@ -103,7 +105,16 @@ var app = new Vue({
         } else {
           this.resetCountdown();
         }
+        this.resetCounter();
       }
+    },
+    resetCounter: function() {
+      this.team1.timeouts = 0;
+      this.team1.jars = 0;
+      this.team1.resets = 0;
+      this.team2.timeouts = 0;
+      this.team2.jars = 0;
+      this.team2.resets = 0;
     },
     handleKeyup: function (event) {
       if (event.code === 'Digit1') {
@@ -114,7 +125,7 @@ var app = new Vue({
         this.handleSetTimer(5);
       } else if (event.code == 'Digit4') {
         this.handleSetTimer(3);
-      } else if (event.code == 'Space') {
+      } else if (event.code == 'Equal') {
         this.handlePauseTimer();
       } else if (event.code == 'Escape') {
         this.handleReset();
@@ -163,11 +174,13 @@ var app = new Vue({
       this.team1 = {
         games: 0,
         timeouts: 0,
+        jars: 0,
         resets: 0,
       };
       this.team2 = {
         games: 0,
         timeouts: 0,
+        jars: 0,
         resets: 0,
       };
     },

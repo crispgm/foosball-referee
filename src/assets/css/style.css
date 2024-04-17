@@ -16,29 +16,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   height: 100%;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   text-align: center;
   word-wrap: break-word;
-}
-
-@media screen and (min-width: 640px) {
-  html {
-    font-size: 18px;
-  }
-
-  body {
-    font-family: 'Open Sans', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    font-size: 1.2rem;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    height: 100%;
-    width: 640px;
-    margin: 0 auto;
-    padding: 0 ;
-    text-align: center;
-    word-wrap: break-word;
-  }
 }
 
 a {
@@ -61,7 +42,7 @@ button {
   background-color: var(--background);
   color: var(--text);
   height: 100%;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   position: absolute;
   width: 100%;
@@ -79,7 +60,7 @@ button {
   text-align: left;
 }
 
-@media screen and (min: 640px) {
+@media screen and (min-width: 640px) {
   .wrapper {
     background-color: var(--background);
     width: 48rem;
@@ -107,6 +88,7 @@ button {
 .btn-reset {
   background-color: var(--pause-reset-bg);
   color: var(--pause-reset-text);
+  border-radius: 4px;
 }
 
 .about {
@@ -124,13 +106,13 @@ button {
 }
 
 .panel {
-  padding: 0.8rem 0.4rem 0.8rem 0;
+  padding: 0.4rem 0.2rem 0.4rem 0;
   text-align: center;
 }
 
 .panel:last-child {
   border: 0;
-  padding: 0.8rem 0 0.8rem 0.4rem;
+  padding: 0.4rem 0 0.4rem 0.2rem;
 }
 
 #team1,
@@ -145,8 +127,12 @@ button {
 }
 
 .panel-section {
-  margin: 0 0 0.8rem 0;
+  margin: 0 0 0.4rem 0;
   text-align: left;
+}
+
+.panel-section:last-child {
+  margin: 0;
 }
 
 .panel-subtitle {
@@ -162,9 +148,9 @@ button {
   background-color: var(--counter-bg);
   color: var(--counter-text);
   font-weight: bold;
-  height: 4.2rem;
+  height: 3.8rem;
   width: 33%;
-  margin: 0 0.4rem 0 0;
+  margin: 0 0.2rem 0 0;
 }
 
 .panel-btn:last-child {
@@ -187,23 +173,23 @@ button {
 .countdown-timer {
   background-color: var(--countdown-timer-bg);
   color: var(--countdown-timer-text);
-  border: 3px solid var(--countdown-timer-border);
+  border: 2px solid var(--countdown-timer-border);
   border-radius: 8px;
-  font-size: 4.8rem;
-  height: 10rem;
-  line-height: 10rem;
+  font-size: 4.2rem;
+  height: 9rem;
+  line-height: 9rem;
 }
 
 .countdown-running {
-  border: 3px solid var(--countdown-running);
+  border: 2px solid var(--countdown-running);
 }
 
 .countdown-warning {
-  border: 3px solid var(--countdown-warning);
+  border: 2px solid var(--countdown-warning);
 }
 
-.countdown-set-timer,
-.countdown-pause-reset {
+.countdown-high-timer,
+.countdown-low-timer {
   display: flex;
   justify-content: space-around;
   margin: 0.6rem 0 0;
@@ -220,10 +206,18 @@ button {
   margin: 0.4rem 0 0;
 }
 
-.countdown-set-timer button {
+.countdown-high-timer button {
   background-color: var(--counter-bg);
   color: var(--counter-text);
-  font-size: 3rem;
+  font-size: 1.6rem;
+  height: 3rem;
+  width: inherit;
+}
+
+.countdown-low-timer button {
+  background-color: var(--counter-bg);
+  color: var(--counter-text);
+  font-size: 2.8rem;
   height: 8rem;
   width: inherit;
 }
