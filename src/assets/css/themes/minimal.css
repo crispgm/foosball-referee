@@ -1,0 +1,18 @@
+/* default minimal theme by crisp, based on OpenColor */
+.theme-minimal {
+  --background: #f8f9fa;
+  --title: #212529;
+  --text: #495057;
+  --separator: #adb5bd;
+  --counter-bg: #adb5bd;
+  --counter-bg-checked: #495057;
+  --counter-text: #495057;
+  --counter-text-checked: #f8f9fa;
+  --countdown-timer-bg: #f8f9fa;
+  --countdown-timer-border: #adb5bd;
+  --countdown-timer-text: #495057;
+  --countdown-running: #f1f3f5;
+  --countdown-warning: #ff6b6b;
+  --pause-reset-text: #495057;
+  --pause-reset-bg: #adb5bd;
+}
