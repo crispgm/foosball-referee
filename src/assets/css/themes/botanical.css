@@ -1,0 +1,18 @@
+/* GMK Botanical by Hazzy https://geekhack.org/index.php?topic=102350.0 */
+.theme-botanical {
+  --background: #dde5ed;
+  --title: #3e5d58;
+  --text: #3e5d58;
+  --separator: #92aca0;
+  --counter-bg: #92aca0;
+  --counter-bg-checked: #3e5d58;
+  --counter-text: #495057;
+  --counter-text-checked: #f8f9fa;
+  --countdown-timer-bg: #92aca0;
+  --countdown-timer-border: #92aca0;
+  --countdown-timer-text: #dde5ed;
+  --countdown-running: #dde5ed;
+  --countdown-warning: #8d5c4e;
+  --pause-reset-text: #3e5d58;
+  --pause-reset-bg: #92aca0;
+}
