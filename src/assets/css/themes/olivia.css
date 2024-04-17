@@ -1,0 +1,18 @@
+/* based on GMK Olivia */
+.theme-olivia {
+  --background: #343a40;
+  --title: #f8f9fa;
+  --text: #f8f9fa;
+  --separator: #f8f9fa;
+  --counter-bg: #f8f9fa;
+  --counter-bg-checked: #ffa8a8;
+  --counter-text: #343a40;
+  --counter-text-checked: #343a40;
+  --countdown-timer-bg: #343a40;
+  --countdown-timer-border: #f8f9fa;
+  --countdown-timer-text: #f8f9fa;
+  --countdown-running: #8ce99a;
+  --countdown-warning: #fab005;
+  --pause-reset-text: #343a40;
+  --pause-reset-bg: #ffa8a8;
+}

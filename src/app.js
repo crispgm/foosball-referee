@@ -16,8 +16,27 @@ var app = new Vue({
     countdownTimeout: null,
     countdownWarning: false,
     countdownState: 'ready',
+    themeName: 'theme-minimal',
+    themeSelected: 'minimal',
+    defaultTheme: 'minimal',
+    themes: [
+      {
+        name: 'Minimal',
+        value: 'minimal',
+      },
+      {
+        name: 'Olivia',
+        value: 'olivia',
+      },
+    ],
+    logs: [],
+    logOutput: '',
   },
   created: function () {
+    this.pushLog('Loading themes...');
+    this.loadTheme();
+
+    this.pushLog('Initializing variables...');
     this.countdownTimer = 0;
     this.countdownDisplay = '0.0';
     this.countdownState = 'ready';
@@ -38,15 +57,14 @@ var app = new Vue({
       immediate: true,
     },
     countdownState: {
-      handler(value) {
-        console.log('Timer state:', value);
+      handler(_value) {
       },
       immediate: true,
     },
   },
   methods: {
     handleButton: function (team, key, value) {
-      console.log(`Clicked Team: ${team} Key: ${key} Value: ${value}`);
+      this.pushLog(`Clicked Team: ${team} Key: ${key} Value: ${value}`);
       if (team != 1 && team != 2) {
         return;
       }
@@ -112,7 +130,7 @@ var app = new Vue({
         if (this.countdownTimer == 0) {
           this.countdownState = 'stop';
 
-          console.log('Player ran out of time');
+          this.pushLog('Player ran out of time');
           if (typeof navigator?.vibrate === 'function') {
             navigator.vibrate(500);
           }
@@ -120,7 +138,7 @@ var app = new Vue({
       }, 100);
     },
     resetCountdown: function () {
-      console.log('Reset countdown');
+      this.pushLog('Reset countdown');
       this.resetTimer();
       this.countdownWarning = false;
       this.countdownTimer = 0;
@@ -133,14 +151,14 @@ var app = new Vue({
       }
     },
     handleSetTimer: function (sec) {
-      console.log(`Start timer of ${sec}s`);
+      this.pushLog(`Start timer of ${sec}s`);
       this.resetTimer();
       this.countdownWarning = false;
       this.countdownTimer = sec * 10;
       this.countdownState = 'running';
     },
     handleReset: function () {
-      console.log('Global reset');
+      this.pushLog('Global reset');
       this.resetCountdown();
       this.team1 = {
         games: 0,
@@ -155,14 +173,47 @@ var app = new Vue({
     },
     handlePauseTimer: function () {
       if (this.countdownState == 'paused') {
-        console.log('Resume timer');
+        this.pushLog('Resume timer');
         this.countdownState = 'running';
         this.setTimer();
       } else if (this.countdownState == 'running') {
-        console.log('Pause timer');
+        this.pushLog('Pause timer');
         this.countdownState = 'paused';
         this.resetTimer();
       }
+    },
+    loadTheme: function () {
+      let theme = window.localStorage.getItem('theme');
+      if (!theme) {
+        theme = this.defaultTheme;
+      }
+      this.themeName = this.getThemeClass(theme);
+      this.themeSelected = theme;
+    },
+    selectTheme: function (_event) {
+      const themeName = this.getThemeClass(this.themeSelected);
+      if (this.themeName == themeName) {
+        return;
+      }
+      this.pushLog(`Selecting theme: ${this.themeSelected}`);
+      this.themeName = themeName;
+      window.localStorage.setItem('theme', this.themeSelected);
+    },
+    getThemeClass: function (name) {
+      return `theme theme-${name}`;
+    },
+    pushLog: function (s) {
+      // TODO
+      console.log(s);
+      this.logs.push(s);
+      if (this.logs > 5000) {
+        this.logs.splice(0, 2000);
+      }
+      this.logOutput = this.logs.join('\n');
+    },
+    resetLog: function () {
+      this.logs = [];
+      this.logOutput = '';
     },
   },
 });
