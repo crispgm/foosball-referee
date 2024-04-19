@@ -1,13 +1,7 @@
 # Foosball Referee
 
-<p align="center">
-  <img src="src/assets/images/logo.png" width="256" />
-</p>
-
-<p align="center">
-  <img src="https://github.com/crispgm/foosball-referee/actions/workflows/pages/pages-build-deployment/badge.svg" alt="pages-build-deployment" />
-  <img alt="GitHub Tag" src="https://img.shields.io/github/v/tag/crispgm/foosball-referee">
-</p>
+[![pages-build-deployment](https://github.com/crispgm/foosball-referee/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/crispgm/foosball-referee/actions/workflows/pages/pages-build-deployment)
+![GitHub Tag](https://img.shields.io/github/v/tag/crispgm/foosball-referee)
 
 ## Introduction
 
