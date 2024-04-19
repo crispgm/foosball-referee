@@ -1,0 +1,17 @@
+.theme-mizu {
+  --background: #ffffff;
+  --title: #444f58;
+  --text: #444f58;
+  --separator: #444f58;
+  --counter-bg: #9fc3d4;
+  --counter-text: #444f58;
+  --counter-bg-checked: #444f58;
+  --counter-text-checked: #f7eee3;
+  --countdown-timer-bg: #444f58;
+  --countdown-timer-border: #444f58;
+  --countdown-timer-text: #f7eee3;
+  --countdown-running: #ffffff;
+  --countdown-warning: #ec8593;
+  --pause-reset-text: #f7eee3;
+  --pause-reset-bg: #444f58;
+}

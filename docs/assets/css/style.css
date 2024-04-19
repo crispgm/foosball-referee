@@ -1,3 +1,5 @@
+@import url("/assets/css/themes/themes.css");
+
 * {
   box-sizing: border-box;
 }
@@ -9,28 +11,15 @@ html {
 }
 
 body {
-  background-color: #343a40;
-  color: #f8f9fa;
   font-family: 'Open Sans', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 1.2rem;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   height: 100%;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   text-align: center;
   word-wrap: break-word;
-}
-
-@media screen and (min-width: 640px) {
-  html {
-    font-size: 18px;
-  }
-
-  body {
-    width: 640px;
-    margin: 0 auto;
-  }
 }
 
 a {
@@ -49,6 +38,16 @@ button {
   color: inherit;
 }
 
+.theme {
+  background-color: var(--background);
+  color: var(--text);
+  height: 100%;
+  margin: 0 auto;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+}
+
 .wrapper {
   margin: 0 auto;
   padding: 0;
@@ -61,39 +60,59 @@ button {
   text-align: left;
 }
 
-@media screen and (min: 640px) {
+@media screen and (min-width: 640px) {
   .wrapper {
+    background-color: var(--background);
     width: 48rem;
   }
 }
 
 .title {
-  font-size: 3rem;
-  padding: 0 0 0.4rem 0;
+  display: flex;
+  justify-content: space-between;
+  padding: auto 0;
+}
+
+.title-text {
+  font-size: 2rem;
+}
+
+.title-options {
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  padding: 0.2rem 0;
+}
+
+.btn-reset {
+  background-color: var(--pause-reset-bg);
+  color: var(--pause-reset-text);
+  border-radius: 4px;
 }
 
 .about {
   font-size: 1rem;
-  border-top: 1px dotted #f8f9fa;
+  border-top: 1px dotted var(--separator);
   margin: 0.8rem 0 0;
   padding: 0.4rem 0;
 }
 
 .scoreboard {
   display: flex;
-  border-top: 1px dotted #f8f9fa;
+  border-top: 1px dotted var(--separator);
   justify-content: space-between;
   padding: 0 0 0.8rem;
 }
 
 .panel {
-  padding: 0.8rem 0.4rem 0.8rem 0;
+  padding: 0.4rem 0.2rem 0.4rem 0;
   text-align: center;
 }
 
 .panel:last-child {
   border: 0;
-  padding: 0.8rem 0 0.8rem 0.4rem;
+  padding: 0.4rem 0 0.4rem 0.2rem;
 }
 
 #team1,
@@ -102,14 +121,18 @@ button {
 }
 
 .panel-title {
-  font-size: 2rem;
+  font-size: 1.8rem;
   padding: 0.8rem 0 0;
   text-align: left;
 }
 
 .panel-section {
-  margin: 0 0 0.8rem 0;
+  margin: 0 0 0.4rem 0;
   text-align: left;
+}
+
+.panel-section:last-child {
+  margin: 0;
 }
 
 .panel-subtitle {
@@ -122,11 +145,12 @@ button {
 }
 
 .panel-btn {
-  color: #343a40;
+  background-color: var(--counter-bg);
+  color: var(--counter-text);
   font-weight: bold;
-  height: 4.2rem;
+  height: 3.8rem;
   width: 33%;
-  margin: 0 0.4rem 0 0;
+  margin: 0 0.2rem 0 0;
 }
 
 .panel-btn:last-child {
@@ -138,7 +162,8 @@ button {
 }
 
 .panel-btn-clicked {
-  background-color: #ffa8a8;
+  color: var(--counter-text-checked);
+  background-color: var(--counter-bg-checked);
 }
 
 .timer {
@@ -146,30 +171,31 @@ button {
 }
 
 .countdown-timer {
-  border: 3px solid #f8f9fa;
+  background-color: var(--countdown-timer-bg);
+  color: var(--countdown-timer-text);
+  border: 2px solid var(--countdown-timer-border);
   border-radius: 8px;
-  font-size: 4.8rem;
-  height: 10rem;
-  line-height: 10rem;
+  font-size: 4.2rem;
+  height: 9rem;
+  line-height: 9rem;
 }
 
 .countdown-running {
-  border: 3px solid #8ce99a;
+  border: 2px solid var(--countdown-running);
 }
 
 .countdown-warning {
-  border: 3px solid #fab005;
+  border: 2px solid var(--countdown-warning);
 }
 
-.countdown-set-timer,
-.countdown-pause-reset {
+.countdown-high-timer,
+.countdown-low-timer {
   display: flex;
   justify-content: space-around;
   margin: 0.6rem 0 0;
 }
 
 .countdown-btn {
-  color: #343a40;
   font-size: 1.2rem;
   font-weight: bold;
   width: 100%;
@@ -180,16 +206,25 @@ button {
   margin: 0.4rem 0 0;
 }
 
-.countdown-set-timer button {
-  color: #343a40;
-  font-size: 3rem;
+.countdown-high-timer button {
+  background-color: var(--counter-bg);
+  color: var(--counter-text);
+  font-size: 1.6rem;
+  height: 3rem;
+  width: inherit;
+}
+
+.countdown-low-timer button {
+  background-color: var(--counter-bg);
+  color: var(--counter-text);
+  font-size: 2.8rem;
   height: 8rem;
   width: inherit;
 }
 
 .countdown-pause-reset button {
-  background-color: #ffa8a8;
-  color: #343a40;
+  background-color: var(--pause-reset-bg);
+  color: var(--pause-reset-text);
   font-size: 1.6rem;
   height: 3rem;
   width: inherit;
