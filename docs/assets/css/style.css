@@ -15,7 +15,6 @@ body {
   font-size: 1.2rem;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  height: 100%;
   margin: 0 auto;
   padding: 0;
   text-align: center;
@@ -51,7 +50,7 @@ button {
 .wrapper {
   margin: 0 auto;
   padding: 0;
-  width: 100%;
+  width: 48rem;
 }
 
 .main {
@@ -60,10 +59,19 @@ button {
   text-align: left;
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (max-height: 700px) {
+  .theme {
+    height: unset;
+  }
+}
+
+@media screen and (max-width: 864px) {
+  .theme {
+    height: 100%;
+  }
+
   .wrapper {
-    background-color: var(--background);
-    width: 48rem;
+    width: 100%;
   }
 }
 
