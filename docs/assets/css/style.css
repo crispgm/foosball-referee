@@ -65,11 +65,13 @@ button {
   }
 }
 
-@media screen and (max-width: 864px) {
+@media screen and (max-width: 864px) and (min-height: 701px) {
   .theme {
     height: 100%;
   }
+}
 
+@media screen and (max-width: 864px) {
   .wrapper {
     width: 100%;
   }
