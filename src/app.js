@@ -263,7 +263,7 @@ var app = new Vue({
       console.log(s);
       this.logs.push(s);
       if (this.logs.length > 5000) {
-        this.logs.splice(0, 2000);
+        this.logs.shift();
       }
       this.logOutput = this.logs.join('\n');
     },
