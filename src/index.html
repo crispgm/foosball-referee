@@ -28,82 +28,18 @@
         </div>
 
         <div class="scoreboard">
-          <div class="panel" id="team1">
-            <div class="panel-title">
-              Team 1
-            </div>
-            <div class="panel-content">
-              <div class="panel-section">
-                <div class="panel-subtitle">Games</div>
-                <div class="panel-operator">
-                  <button class="panel-btn" @click="handleButton(1, 'games', 1)" v-bind:class="[team1.games == 1 ? 'panel-btn-clicked' : '']">1</button>
-                  <button class="panel-btn" @click="handleButton(1, 'games', 2)" v-bind:class="[team1.games == 2 ? 'panel-btn-clicked' : '']">2</button>
-                  <button class="panel-btn" @click="handleButton(1, 'games', 3)" v-bind:class="[team1.games == 3 ? 'panel-btn-clicked' : '']">3</button>
-                </div>
-              </div>
-              <div class="panel-section">
-                <div class="panel-subtitle">Timeouts</div>
-                <div class="panel-operator">
-                  <button class="panel-btn panel-btn-large" @click="handleButton(1, 'timeouts', 1)" v-bind:class="[team1.timeouts == 1 ? 'panel-btn-clicked' : '']">1</button>
-                  <button class="panel-btn panel-btn-large" @click="handleButton(1, 'timeouts', 2)" v-bind:class="[team1.timeouts == 2 ? 'panel-btn-clicked' : '']">2</button>
-                </div>
-              </div>
-              <div class="panel-section">
-                <div class="panel-subtitle">Jars</div>
-                <div class="panel-operator">
-                  <button class="panel-btn panel-btn-large" @click="handleButton(1, 'jars', 1)" v-bind:class="[team1.jars == 1 ? 'panel-btn-clicked' : '']">1</button>
-                  <button class="panel-btn panel-btn-large" @click="handleButton(1, 'jars', 2)" v-bind:class="[team1.jars == 2 ? 'panel-btn-clicked' : '']">2</button>
-                  <button class="panel-btn panel-btn-large" @click="handleButton(1, 'jars', 3)" v-bind:class="[team1.jars == 3 ? 'panel-btn-clicked' : '']">3</button>
-                </div>
-              </div>
-              <div class="panel-section">
-                <div class="panel-subtitle">Resets</div>
-                <div class="panel-operator">
-                  <button class="panel-btn panel-btn-large" @click="handleButton(1, 'resets', 1)" v-bind:class="[team1.resets == 1 ? 'panel-btn-clicked' : '']">1</button>
-                  <button class="panel-btn panel-btn-large" @click="handleButton(1, 'resets', 2)" v-bind:class="[team1.resets == 2 ? 'panel-btn-clicked' : '']">2</button>
-                  <button class="panel-btn panel-btn-large" @click="handleButton(1, 'resets', 3)" v-bind:class="[team1.resets == 3 ? 'panel-btn-clicked' : '']">3</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="panel" id="team2">
-            <div class="panel-title">
-              Team 2
-            </div>
-            <div class="panel-content">
-              <div class="panel-section">
-                <div class="panel-subtitle">Games</div>
-                <div class="panel-operator">
-                  <button class="panel-btn" @click="handleButton(2, 'games', 1)" v-bind:class="[team2.games == 1 ? 'panel-btn-clicked' : '']">1</button>
-                  <button class="panel-btn" @click="handleButton(2, 'games', 2)" v-bind:class="[team2.games == 2 ? 'panel-btn-clicked' : '']">2</button>
-                  <button class="panel-btn" @click="handleButton(2, 'games', 3)" v-bind:class="[team2.games == 3 ? 'panel-btn-clicked' : '']">3</button>
-                </div>
-              </div>
-              <div class="panel-section">
-                <div class="panel-subtitle">Timeouts</div>
-                <div class="panel-operator">
-                  <button class="panel-btn panel-btn-large" @click="handleButton(2, 'timeouts', 1)" v-bind:class="[team2.timeouts == 1 ? 'panel-btn-clicked' : '']">1</button>
-                  <button class="panel-btn panel-btn-large" @click="handleButton(2, 'timeouts', 2)" v-bind:class="[team2.timeouts == 2 ? 'panel-btn-clicked' : '']">2</button>
-                </div>
-              </div>
-              <div class="panel-section">
-                <div class="panel-subtitle">Jars</div>
-                <div class="panel-operator">
-                  <button class="panel-btn panel-btn-large" @click="handleButton(2, 'jars', 1)" v-bind:class="[team2.jars == 1 ? 'panel-btn-clicked' : '']">1</button>
-                  <button class="panel-btn panel-btn-large" @click="handleButton(2, 'jars', 2)" v-bind:class="[team2.jars == 2 ? 'panel-btn-clicked' : '']">2</button>
-                  <button class="panel-btn panel-btn-large" @click="handleButton(2, 'jars', 3)" v-bind:class="[team2.jars == 3 ? 'panel-btn-clicked' : '']">3</button>
-                </div>
-              </div>
-              <div class="panel-section">
-                <div class="panel-subtitle">Resets</div>
-                <div class="panel-operator">
-                  <button class="panel-btn panel-btn-large" @click="handleButton(2, 'resets', 1)" v-bind:class="[team2.resets == 1 ? 'panel-btn-clicked' : '']">1</button>
-                  <button class="panel-btn panel-btn-large" @click="handleButton(2, 'resets', 2)" v-bind:class="[team2.resets == 2 ? 'panel-btn-clicked' : '']">2</button>
-                  <button class="panel-btn panel-btn-large" @click="handleButton(2, 'resets', 3)" v-bind:class="[team2.resets == 3 ? 'panel-btn-clicked' : '']">3</button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <team-panel
+            name="Team 1"
+            :team-id="1"
+            :team="team1"
+            @click-button="handleButton"
+          ></team-panel>
+          <team-panel
+            name="Team 2"
+            :team-id="2"
+            :team="team2"
+            @click-button="handleButton"
+          ></team-panel>
         </div>
 
         <div class="timer" id="timer">
@@ -137,6 +73,6 @@
   </div>
 </body>
 
-<script type="text/javascript" src="/app.js"></script>
+<script type="module" src="/app.js"></script>
 
 </html>
