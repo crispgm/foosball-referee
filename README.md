@@ -21,8 +21,14 @@ npm install
 # Lint
 npm run lint
 
-# Serve with static server
+# Start development server
 npm run serve
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
 ## Credit

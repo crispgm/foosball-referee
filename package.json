@@ -4,14 +4,16 @@
   "description": "Foosball referee web app",
   "main": "index.js",
   "scripts": {
-    "serve": "http-server ./src",
+    "serve": "vite",
+    "preview": "vite preview",
     "lint": "eslint --ext .js ./src",
-    "build": "./scripts/build.sh"
+    "build": "vite build"
   },
   "author": "David Zhang",
   "license": "MIT",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "eslint": "^8.39.0",
-    "http-server": "^14.1.1"
+    "vite": "^7.3.1"
   }
 }

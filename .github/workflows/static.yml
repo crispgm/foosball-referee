@@ -15,12 +15,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm install
       - name: 'Publish'
         run: |
           git config --global user.name 'crispbot'
           git config --global user.email 'crispgm@users.noreply.github.com'
-          ./scripts/build.sh
+          npm run build
           git add ./docs
           git commit --allow-empty -m "Deployed at $(date +%Y%m%d-%H:%M:%S)"
-          git remote set-url --push origin https://crispgm:${{ secrets.ACCESS_TOKEN }}@github.com/foostime/referee
           git push origin main
