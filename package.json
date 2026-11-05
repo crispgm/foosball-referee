@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "Foosball referee web app",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "serve": "vite",
     "preview": "vite preview",
     "lint": "eslint --ext .js ./src",
+    "test": "node --test",
     "build": "vite build"
   },
   "author": "David Zhang",

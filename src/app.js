@@ -1,3 +1,11 @@
+import {
+  applyCounterSelection,
+  createTeam,
+  getCounterTimerAction,
+  isValidCounterSelection,
+  resetTeamCounters,
+} from './match-state.js';
+
 Vue.component('team-panel', {
   props: ['team', 'teamId', 'name'],
   template: `
@@ -36,18 +44,8 @@ Vue.component('team-panel', {
 var app = new Vue({
   el: '#app',
   data: {
-    team1: {
-      games: 0,
-      timeouts: 0,
-      jars: 0,
-      resets: 0,
-    },
-    team2: {
-      games: 0,
-      timeouts: 0,
-      jars: 0,
-      resets: 0,
-    },
+    team1: createTeam(),
+    team2: createTeam(),
     countdownTimer: 0,
     countdownDisplay: 0.0,
     countdownTimeout: null,
@@ -92,72 +90,30 @@ var app = new Vue({
   beforeDestroy: function () {
     document.removeEventListener('keyup', this.handleKeyup);
   },
-  watch: {
-    countdownTimer: {
-      handler(value) {
-        if (value > 0) {
-          this.setTimer();
-        }
-      },
-      immediate: true,
-    },
-    countdownState: {
-      handler(_value) {
-      },
-      immediate: true,
-    },
-  },
   methods: {
     handleButton: function (team, key, value) {
       this.pushLog(`Clicked Team: ${team} Key: ${key} Value: ${value}`);
-      if (team != 1 && team != 2) {
+      if (!isValidCounterSelection(team, key, value)) {
         return;
       }
-      if (key != 'games' && key != 'timeouts' && key != 'jars' && key != 'resets') {
-        return;
+      const teamName = `team${team}`;
+      const selection = applyCounterSelection(this[teamName], key, value);
+      this[teamName] = selection.team;
+
+      const timerAction = getCounterTimerAction(key, selection.enabled, value);
+      if (timerAction.type === 'set') {
+        this.handleSetTimer(timerAction.seconds);
+      } else if (timerAction.type === 'reset') {
+        this.resetCountdown();
       }
 
-      let data;
-      let onOff = true;
-      if (team == 1) {
-        data = this.team1;
-      } else {
-        data = this.team2;
-      }
-      if (data[key] == value) {
-        data[key] = 0;
-        onOff = false;
-      } else {
-        data[key] = value;
-      }
-      if (team == 1) {
-        this.team1 = data;
-      } else {
-        this.team2 = data;
-      }
-
-      if (key == 'timeouts') {
-        if (onOff) {
-          this.handleSetTimer(30);
-        } else {
-          this.resetCountdown();
-        }
-      } else if (key == 'games') {
-        if (onOff && value != 3) {
-          this.handleSetTimer(90);
-        } else {
-          this.resetCountdown();
-        }
+      if (key == 'games') {
         this.resetCounter();
       }
     },
     resetCounter: function() {
-      this.team1.timeouts = 0;
-      this.team1.jars = 0;
-      this.team1.resets = 0;
-      this.team2.timeouts = 0;
-      this.team2.jars = 0;
-      this.team2.resets = 0;
+      this.team1 = resetTeamCounters(this.team1);
+      this.team2 = resetTeamCounters(this.team2);
     },
     handleKeyup: function (event) {
       if (event.code === 'Digit1') {
@@ -176,6 +132,10 @@ var app = new Vue({
     },
     setTimer: function () {
       this.countdownTimeout = window.setTimeout(() => {
+        this.countdownTimeout = null;
+        if (this.countdownState !== 'running') {
+          return;
+        }
         this.countdownTimer--;
         this.countdownDisplay = (this.countdownTimer / 10).toFixed(1);
         if (this.countdownTimer <= 20) {
@@ -188,6 +148,8 @@ var app = new Vue({
           if (typeof navigator.vibrate === 'function') {
             navigator.vibrate(500);
           }
+        } else {
+          this.setTimer();
         }
       }, 100);
     },
@@ -202,6 +164,7 @@ var app = new Vue({
     resetTimer: function () {
       if (this.countdownTimeout != null) {
         window.clearTimeout(this.countdownTimeout);
+        this.countdownTimeout = null;
       }
     },
     handleSetTimer: function (sec) {
@@ -209,23 +172,15 @@ var app = new Vue({
       this.resetTimer();
       this.countdownWarning = false;
       this.countdownTimer = sec * 10;
+      this.countdownDisplay = (this.countdownTimer / 10).toFixed(1);
       this.countdownState = 'running';
+      this.setTimer();
     },
     handleReset: function () {
       this.pushLog('Global reset');
       this.resetCountdown();
-      this.team1 = {
-        games: 0,
-        timeouts: 0,
-        jars: 0,
-        resets: 0,
-      };
-      this.team2 = {
-        games: 0,
-        timeouts: 0,
-        jars: 0,
-        resets: 0,
-      };
+      this.team1 = createTeam();
+      this.team2 = createTeam();
     },
     handlePauseTimer: function () {
       if (this.countdownState == 'paused') {
