@@ -1,6 +1,6 @@
 # Foosball Referee
 
-[![pages-build-deployment](https://github.com/crispgm/foosball-referee/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/crispgm/foosball-referee/actions/workflows/pages/pages-build-deployment)
+[![Deploy to GitHub Pages](https://github.com/crispgm/foosball-referee/actions/workflows/static.yml/badge.svg)](https://github.com/crispgm/foosball-referee/actions/workflows/static.yml)
 ![GitHub Tag](https://img.shields.io/github/v/tag/crispgm/foosball-referee)
 
 ## Introduction
@@ -30,6 +30,8 @@ npm run build
 # Preview production build
 npm run preview
 ```
+
+Pushes to `main` build into the ignored `dist/` directory and publish the result to the `gh-pages` branch. GitHub Pages deployment runs in the same workflow; generated files are not committed to `main`.
 
 ## Credit
 

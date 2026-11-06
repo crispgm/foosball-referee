@@ -1,31 +1,49 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Deploy to GitHub Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
       - name: Install dependencies
         run: npm install
-      - name: 'Publish'
-        run: |
-          git config --global user.name 'crispbot'
-          git config --global user.email 'crispgm@users.noreply.github.com'
-          npm run build
-          git add ./docs
-          git commit --allow-empty -m "Deployed at $(date +%Y%m%d-%H:%M:%S)"
-          git push origin main
+      - name: Build
+        run: npm run build
+      - name: Publish gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./dist
+          force_orphan: true
+      - name: Use workflow deployment for Pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method PUT repos/${{ github.repository }}/pages -f build_type=workflow
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./dist
+      - name: Deploy to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

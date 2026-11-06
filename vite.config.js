@@ -5,7 +5,7 @@ export default defineConfig({
   root: 'src',
   base: '/foosball-referee/',
   build: {
-    outDir: '../docs',
+    outDir: '../dist',
     emptyOutDir: true,
     rollupOptions: {
       output: {
