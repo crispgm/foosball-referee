@@ -1,18 +1,18 @@
-/* GMK Olivia https://geekhack.org/index.php?topic=94386.0 */
+/* Light GMK Olivia variant https://geekhack.org/index.php?topic=94386.0 */
 .theme-olivia {
-  --background: #343a40;
-  --title: #f8f9fa;
-  --text: #f8f9fa;
-  --separator: #f8f9fa;
-  --counter-bg: #f8f9fa;
+  --background: #f8f9fa;
+  --title: #343a40;
+  --text: #343a40;
+  --separator: #adb5bd;
+  --counter-bg: #e9ecef;
   --counter-bg-checked: #ffa8a8;
   --counter-text: #343a40;
   --counter-text-checked: #343a40;
   --countdown-timer-bg: #343a40;
-  --countdown-timer-border: #f8f9fa;
+  --countdown-timer-border: #343a40;
   --countdown-timer-text: #f8f9fa;
-  --countdown-running: #8ce99a;
-  --countdown-warning: #fab005;
+  --countdown-running: #2b8a3e;
+  --countdown-warning: #d9480f;
   --pause-reset-text: #343a40;
   --pause-reset-bg: #ffa8a8;
 }

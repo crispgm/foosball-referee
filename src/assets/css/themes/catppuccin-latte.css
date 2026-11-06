@@ -1,0 +1,18 @@
+/* Catppuccin Latte: https://catppuccin.com/palette/ */
+.theme-catppuccin-latte {
+  --background: #eff1f5;
+  --title: #4c4f69;
+  --text: #4c4f69;
+  --separator: #9ca0b0;
+  --counter-bg: #ccd0da;
+  --counter-bg-checked: #8839ef;
+  --counter-text: #4c4f69;
+  --counter-text-checked: #eff1f5;
+  --countdown-timer-bg: #e6e9ef;
+  --countdown-timer-border: #8c8fa1;
+  --countdown-timer-text: #4c4f69;
+  --countdown-running: #40a02b;
+  --countdown-warning: #d20f39;
+  --pause-reset-text: #4c4f69;
+  --pause-reset-bg: #ccd0da;
+}

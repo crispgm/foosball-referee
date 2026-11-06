@@ -1,0 +1,18 @@
+/* Gruvbox dark medium: https://github.com/morhetz/gruvbox */
+.theme-gruvbox {
+  --background: #282828;
+  --title: #fabd2f;
+  --text: #ebdbb2;
+  --separator: #928374;
+  --counter-bg: #3c3836;
+  --counter-bg-checked: #fabd2f;
+  --counter-text: #ebdbb2;
+  --counter-text-checked: #282828;
+  --countdown-timer-bg: #3c3836;
+  --countdown-timer-border: #928374;
+  --countdown-timer-text: #ebdbb2;
+  --countdown-running: #b8bb26;
+  --countdown-warning: #fb4934;
+  --pause-reset-text: #282828;
+  --pause-reset-bg: #fe8019;
+}

@@ -109,7 +109,8 @@ select:focus-visible {
   background: var(--background);
   color: var(--text);
   font-size: 1rem;
-  max-width: 9.5rem;
+  padding: 0 0.3rem;
+  width: 12rem;
 }
 
 .btn-reset {
@@ -294,8 +295,10 @@ select:focus-visible {
   .title-text {
     font-size: 1.6rem;
   }
+}
 
-  .theme-label select {
-    max-width: 9rem;
+@media screen and (max-width: 340px) {
+  .title-text {
+    font-size: 1.3rem;
   }
 }

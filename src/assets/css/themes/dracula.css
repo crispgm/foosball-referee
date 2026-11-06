@@ -1,0 +1,18 @@
+/* Dracula Classic: https://draculatheme.com/spec */
+.theme-dracula {
+  --background: #282a36;
+  --title: #bd93f9;
+  --text: #f8f8f2;
+  --separator: #6272a4;
+  --counter-bg: #44475a;
+  --counter-bg-checked: #bd93f9;
+  --counter-text: #f8f8f2;
+  --counter-text-checked: #282a36;
+  --countdown-timer-bg: #343746;
+  --countdown-timer-border: #6272a4;
+  --countdown-timer-text: #f8f8f2;
+  --countdown-running: #50fa7b;
+  --countdown-warning: #ff5555;
+  --pause-reset-text: #282a36;
+  --pause-reset-bg: #ff79c6;
+}

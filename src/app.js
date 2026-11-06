@@ -62,6 +62,22 @@ var app = new Vue({
         value: 'botanical',
       },
       {
+        name: 'Catppuccin Latte',
+        value: 'catppuccin-latte',
+      },
+      {
+        name: 'Catppuccin Mocha',
+        value: 'catppuccin-mocha',
+      },
+      {
+        name: 'Dracula',
+        value: 'dracula',
+      },
+      {
+        name: 'Gruvbox',
+        value: 'gruvbox',
+      },
+      {
         name: 'Minimal',
         value: 'minimal',
       },
@@ -70,8 +86,20 @@ var app = new Vue({
         value: 'mizu',
       },
       {
+        name: 'Nord',
+        value: 'nord',
+      },
+      {
         name: 'Olivia',
         value: 'olivia',
+      },
+      {
+        name: 'Rosé Pine',
+        value: 'rose-pine',
+      },
+      {
+        name: 'Tokyo Night',
+        value: 'tokyo-night',
       },
     ],
     logs: [],

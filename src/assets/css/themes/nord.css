@@ -1,0 +1,18 @@
+/* Nord: https://www.nordtheme.com/docs/colors-and-palettes/ */
+.theme-nord {
+  --background: #2e3440;
+  --title: #88c0d0;
+  --text: #eceff4;
+  --separator: #5e81ac;
+  --counter-bg: #3b4252;
+  --counter-bg-checked: #88c0d0;
+  --counter-text: #eceff4;
+  --counter-text-checked: #2e3440;
+  --countdown-timer-bg: #3b4252;
+  --countdown-timer-border: #81a1c1;
+  --countdown-timer-text: #eceff4;
+  --countdown-running: #a3be8c;
+  --countdown-warning: #bf616a;
+  --pause-reset-text: #2e3440;
+  --pause-reset-bg: #ebcb8b;
+}

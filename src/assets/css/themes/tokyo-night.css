@@ -1,0 +1,18 @@
+/* Tokyo Night (Night): https://github.com/folke/tokyonight.nvim */
+.theme-tokyo-night {
+  --background: #1a1b26;
+  --title: #7aa2f7;
+  --text: #c0caf5;
+  --separator: #565f89;
+  --counter-bg: #292e42;
+  --counter-bg-checked: #7aa2f7;
+  --counter-text: #c0caf5;
+  --counter-text-checked: #1a1b26;
+  --countdown-timer-bg: #292e42;
+  --countdown-timer-border: #565f89;
+  --countdown-timer-text: #c0caf5;
+  --countdown-running: #9ece6a;
+  --countdown-warning: #f7768e;
+  --pause-reset-text: #1a1b26;
+  --pause-reset-bg: #ff9e64;
+}

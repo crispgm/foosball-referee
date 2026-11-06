@@ -1,0 +1,18 @@
+/* Rosé Pine (main): https://rosepinetheme.com/palette/ */
+.theme-rose-pine {
+  --background: #191724;
+  --title: #ebbcba;
+  --text: #e0def4;
+  --separator: #6e6a86;
+  --counter-bg: #26233a;
+  --counter-bg-checked: #c4a7e7;
+  --counter-text: #e0def4;
+  --counter-text-checked: #191724;
+  --countdown-timer-bg: #1f1d2e;
+  --countdown-timer-border: #6e6a86;
+  --countdown-timer-text: #e0def4;
+  --countdown-running: #9ccfd8;
+  --countdown-warning: #eb6f92;
+  --pause-reset-text: #191724;
+  --pause-reset-bg: #f6c177;
+}
