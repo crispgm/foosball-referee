@@ -9,33 +9,35 @@ import {
 Vue.component('team-panel', {
   props: ['team', 'teamId', 'name'],
   template: `
-    <div class="panel" :id="'team' + teamId">
-      <div class="panel-title">
+    <section class="panel" :id="'team' + teamId" :aria-labelledby="'team-title-' + teamId">
+      <h3 class="panel-title" :id="'team-title-' + teamId">
         {{ name }}
-      </div>
+      </h3>
       <div class="panel-content">
         <div class="panel-section" v-for="section in sections" :key="section.key">
           <div class="panel-subtitle">{{ section.label }}</div>
-          <div class="panel-operator">
+          <div class="panel-operator" :class="{'panel-operator-two': section.values.length === 2}" role="group" :aria-label="name + ' ' + section.label">
             <button v-for="n in section.values"
               :key="n"
               class="panel-btn"
-              :class="{'panel-btn-large': section.large, 'panel-btn-clicked': team[section.key] == n}"
+              :class="{'panel-btn-clicked': team[section.key] == n}"
+              :aria-pressed="team[section.key] == n"
+              :aria-label="name + ' ' + section.label + ' ' + n"
               @click="$emit('click-button', teamId, section.key, n)">
               {{ n }}
             </button>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   `,
   data() {
     return {
       sections: [
-        { label: 'Games', key: 'games', values: [1, 2, 3], large: false },
-        { label: 'Timeouts', key: 'timeouts', values: [1, 2], large: true },
-        { label: 'Jars', key: 'jars', values: [1, 2, 3], large: true },
-        { label: 'Resets', key: 'resets', values: [1, 2, 3], large: true },
+        { label: 'Games', key: 'games', values: [1, 2, 3] },
+        { label: 'Timeouts', key: 'timeouts', values: [1, 2] },
+        { label: 'Jars', key: 'jars', values: [1, 2, 3] },
+        { label: 'Resets', key: 'resets', values: [1, 2, 3] },
       ]
     }
   }
@@ -83,6 +85,21 @@ var app = new Vue({
     this.countdownTimer = 0;
     this.countdownDisplay = '0.0';
     this.countdownState = 'ready';
+  },
+  computed: {
+    timerStatus: function () {
+      return {
+        ready: 'Ready',
+        running: 'Running',
+        paused: 'Paused',
+        stop: 'Time up',
+      }[this.countdownState];
+    },
+    timerHint: function () {
+      if (this.countdownState === 'running') return 'Tap timer to pause';
+      if (this.countdownState === 'paused') return 'Tap timer to resume';
+      return 'Choose a duration to start';
+    },
   },
   mounted: function () {
     document.addEventListener('keyup', this.handleKeyup);
@@ -177,6 +194,9 @@ var app = new Vue({
       this.setTimer();
     },
     handleReset: function () {
+      if (!window.confirm('Reset the match record and timer?')) {
+        return;
+      }
       this.pushLog('Global reset');
       this.resetCountdown();
       this.team1 = createTeam();

@@ -6,7 +6,6 @@
 
 html {
   font-size: 12px;
-  height: 100%;
   width: 100%;
 }
 
@@ -35,149 +34,147 @@ button {
   border: 0;
   border-radius: 8px;
   color: inherit;
+  cursor: pointer;
+  font: inherit;
+  touch-action: manipulation;
+}
+
+button:focus-visible,
+select:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
 
 .theme {
   background-color: var(--background);
   color: var(--text);
-  height: 100%;
+  min-height: 100vh;
   margin: 0 auto;
-  padding: 0;
-  position: absolute;
   width: 100%;
 }
 
 .wrapper {
   margin: 0 auto;
-  padding: 0;
-  width: 48rem;
+  max-width: 52rem;
+  padding: 1.2rem;
 }
 
 .main {
-  bottom: 2rem;
-  margin: 1rem;
   text-align: left;
-}
-
-@media screen and (max-height: 700px) {
-  .theme {
-    height: unset;
-  }
-}
-
-@media screen and (max-width: 864px) and (min-height: 701px) {
-  .theme {
-    height: 100%;
-  }
-}
-
-@media screen and (max-width: 864px) {
-  .wrapper {
-    width: 100%;
-  }
 }
 
 .title {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding: auto 0;
+  gap: 1rem;
+  border-bottom: 1px dotted var(--separator);
+  margin-bottom: 1.2rem;
+  padding-bottom: 1rem;
 }
 
 .title-text {
+  color: var(--title);
   font-size: 2rem;
+  line-height: 1.2;
+  margin: 0;
 }
 
 .title-options {
-  color: var(--text);
-  font-size: 1.2rem;
-  font-weight: bold;
   display: flex;
-  padding: 0.2rem 0;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.theme-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1rem;
+}
+
+.theme-label select,
+.btn-reset {
+  border: 1px solid var(--separator);
+  border-radius: 6px;
+  min-height: 3.5rem;
+  padding: 0 0.7rem;
+}
+
+.theme-label select {
+  background: var(--background);
+  color: var(--text);
 }
 
 .btn-reset {
   background-color: var(--pause-reset-bg);
   color: var(--pause-reset-text);
-  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
 .about {
-  font-size: 1rem;
   border-top: 1px dotted var(--separator);
-  margin: 0.8rem 0 0;
-  padding: 0.4rem 0;
-}
-
-.scoreboard {
   display: flex;
-  border-top: 1px dotted var(--separator);
-  justify-content: space-between;
-  padding: 0 0 0.8rem;
-}
-
-.panel {
-  padding: 0.4rem 0.2rem 0.4rem 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-top: 1.2rem;
+  padding: 0.8rem 0 1.2rem;
   text-align: center;
 }
 
-.panel:last-child {
-  border: 0;
-  padding: 0.4rem 0 0.4rem 0.2rem;
-}
-
-#team1,
-#team2 {
-  width: 50%;
-}
-
-.panel-title {
-  font-size: 1.8rem;
-  padding: 0.8rem 0 0;
-  text-align: left;
-}
-
-.panel-section {
-  margin: 0 0 0.4rem 0;
-  text-align: left;
-}
-
-.panel-section:last-child {
+.about p {
   margin: 0;
 }
 
-.panel-subtitle {
-  padding: 0.8rem 0 0.4rem;
-}
-
-.panel-operator {
+.about nav {
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  gap: 0.4rem;
 }
 
-.panel-btn {
-  background-color: var(--counter-bg);
-  color: var(--counter-text);
-  font-weight: bold;
-  height: 3.8rem;
-  width: 33%;
-  margin: 0 0.2rem 0 0;
+.about a {
+  display: inline-block;
+  font-weight: 600;
+  padding: 0.2rem 0.4rem;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
 }
 
-.panel-btn:last-child {
+.about a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+
+.section-heading h2 {
+  font-size: 1.3rem;
+  line-height: 1.3;
   margin: 0;
-}
-
-.panel-btn-large {
-  width: 50%;
-}
-
-.panel-btn-clicked {
-  color: var(--counter-text-checked);
-  background-color: var(--counter-bg-checked);
 }
 
 .timer {
-  text-align: center;
+  border: 1px solid var(--separator);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.timer-status {
+  border: 1px solid var(--separator);
+  border-radius: 999px;
+  font-size: 1rem;
+  line-height: 1.4;
+  padding: 0.2rem 0.7rem;
 }
 
 .countdown-timer {
@@ -185,57 +182,113 @@ button {
   color: var(--countdown-timer-text);
   border: 2px solid var(--countdown-timer-border);
   border-radius: 8px;
-  font-size: 4.2rem;
-  height: 9rem;
-  line-height: 9rem;
+  font-size: 4.6rem;
+  font-weight: 700;
+  min-height: 8rem;
+  width: 100%;
+}
+
+.countdown-timer:disabled {
+  cursor: default;
+  opacity: 1;
 }
 
 .countdown-running {
-  border: 2px solid var(--countdown-running);
+  border-color: var(--countdown-running);
 }
 
 .countdown-warning {
-  border: 2px solid var(--countdown-warning);
+  border-color: var(--countdown-warning);
 }
 
-.countdown-high-timer,
-.countdown-low-timer {
-  display: flex;
-  justify-content: space-around;
-  margin: 0.6rem 0 0;
+.timer-hint {
+  font-size: 1rem;
+  margin: 0.4rem 0 0.8rem;
+  text-align: center;
 }
 
-.countdown-btn {
-  font-size: 1.2rem;
-  font-weight: bold;
-  width: 100%;
-  margin: 0.4rem 0.8rem 0 0;
+.timer-presets {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.6rem;
 }
 
-.countdown-btn:last-child {
-  margin: 0.4rem 0 0;
-}
-
-.countdown-high-timer button {
+.timer-presets button {
   background-color: var(--counter-bg);
   color: var(--counter-text);
-  font-size: 1.6rem;
-  height: 3rem;
-  width: inherit;
+  font-size: 1.5rem;
+  font-weight: 700;
+  min-height: 4.5rem;
 }
 
-.countdown-low-timer button {
+.scoreboard-section {
+  margin-top: 1.6rem;
+}
+
+.scoreboard {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.panel {
+  border: 1px solid var(--separator);
+  border-radius: 10px;
+  min-width: 0;
+  padding: 0.8rem;
+}
+
+.panel-title {
+  border-bottom: 1px dotted var(--separator);
+  font-size: 1.5rem;
+  line-height: 1.3;
+  margin: 0 0 0.8rem;
+  padding-bottom: 0.6rem;
+  text-align: center;
+}
+
+.panel-section + .panel-section {
+  margin-top: 0.8rem;
+}
+
+.panel-subtitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.panel-operator {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.3rem;
+}
+
+.panel-operator-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.panel-btn {
   background-color: var(--counter-bg);
   color: var(--counter-text);
-  font-size: 2.8rem;
-  height: 8rem;
-  width: inherit;
+  font-size: 1.3rem;
+  font-weight: 700;
+  min-height: 4rem;
+  min-width: 0;
 }
 
-.countdown-pause-reset button {
-  background-color: var(--pause-reset-bg);
-  color: var(--pause-reset-text);
-  font-size: 1.6rem;
-  height: 3rem;
-  width: inherit;
+.panel-btn-clicked {
+  background-color: var(--counter-bg-checked);
+  color: var(--counter-text-checked);
+}
+
+@media screen and (max-width: 540px) {
+  .title {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .title-options {
+    justify-content: space-between;
+    width: 100%;
+  }
 }
