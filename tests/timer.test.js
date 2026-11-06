@@ -7,6 +7,7 @@ let app;
 
 globalThis.window = {
   localStorage: { getItem: () => null },
+  confirm: () => true,
   setTimeout(callback) {
     const id = nextTimerId++;
     pending.set(id, callback);
@@ -69,4 +70,20 @@ it('stops scheduling ticks at zero', () => {
   assert.equal(app.countdownDisplay, '0.0');
   assert.equal(app.countdownState, 'stop');
   assert.equal(pending.size, 0);
+});
+
+it('resets the match record without stopping the timer', () => {
+  app.team1.games = 2;
+  app.team2.jars = 1;
+  app.handleSetTimer(15);
+
+  app.handleResetMatch();
+
+  assert.equal(app.team1.games, 0);
+  assert.equal(app.team2.jars, 0);
+  assert.equal(app.countdownState, 'running');
+  assert.equal(app.countdownDisplay, '15.0');
+  tick();
+  assert.equal(app.countdownDisplay, '14.9');
+  app.resetCountdown();
 });

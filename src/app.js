@@ -144,7 +144,7 @@ var app = new Vue({
       } else if (event.code == 'Equal') {
         this.handlePauseTimer();
       } else if (event.code == 'Escape') {
-        this.handleReset();
+        this.handleResetMatch();
       }
     },
     setTimer: function () {
@@ -193,12 +193,11 @@ var app = new Vue({
       this.countdownState = 'running';
       this.setTimer();
     },
-    handleReset: function () {
-      if (!window.confirm('Reset the match record and timer?')) {
+    handleResetMatch: function () {
+      if (!window.confirm('Reset both teams\' match records?')) {
         return;
       }
-      this.pushLog('Global reset');
-      this.resetCountdown();
+      this.pushLog('Reset match record');
       this.team1 = createTeam();
       this.team2 = createTeam();
     },

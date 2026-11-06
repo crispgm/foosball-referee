@@ -18,16 +18,14 @@
       <main class="main">
         <header class="title">
           <h1 class="title-text">Foosball Referee</h1>
-          <div class="title-options">
-            <label class="theme-label">Theme
-              <select v-model="themeSelected" @change="selectTheme($event)">
-                <option v-for="theme in themes" v-bind:value="theme.value">
-                  {{ theme.name }}
-                </option>
-              </select>
-            </label>
-            <button class="btn-reset" @click="handleReset()">Reset match</button>
-          </div>
+          <label class="theme-label">
+            <span class="visually-hidden">Theme</span>
+            <select v-model="themeSelected" @change="selectTheme($event)">
+              <option v-for="theme in themes" v-bind:value="theme.value">
+                {{ theme.name }}
+              </option>
+            </select>
+          </label>
         </header>
 
         <section class="timer" id="timer" aria-labelledby="timer-title">
@@ -50,6 +48,7 @@
         <section class="scoreboard-section" aria-labelledby="record-title">
           <div class="section-heading">
             <h2 id="record-title">Match record</h2>
+            <button class="btn-reset" @click="handleResetMatch()">Reset match</button>
           </div>
           <div class="scoreboard">
             <team-panel
