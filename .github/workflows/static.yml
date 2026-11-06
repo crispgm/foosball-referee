@@ -36,10 +36,6 @@ jobs:
           publish_branch: gh-pages
           publish_dir: ./dist
           force_orphan: true
-      - name: Use workflow deployment for Pages
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh api --method PUT repos/${{ github.repository }}/pages -f build_type=workflow
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:

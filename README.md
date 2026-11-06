@@ -31,7 +31,9 @@ npm run build
 npm run preview
 ```
 
-Pushes to `main` build into the ignored `dist/` directory and publish the result to the `gh-pages` branch. GitHub Pages deployment runs in the same workflow; generated files are not committed to `main`.
+Pushes to `main` build into the ignored `dist/` directory and publish the result to the `gh-pages` branch. Generated files are not committed to `main`.
+
+In repository Settings → Pages, set **Source** to **GitHub Actions** once. The workflow deploys the build directly because commits made with `GITHUB_TOKEN` do not trigger branch-based Pages builds.
 
 ## Credit
 
