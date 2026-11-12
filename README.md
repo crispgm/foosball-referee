@@ -3,6 +3,12 @@
 [![Deploy to GitHub Pages](https://github.com/crispgm/foosball-referee/actions/workflows/static.yml/badge.svg)](https://github.com/crispgm/foosball-referee/actions/workflows/static.yml)
 ![GitHub Tag](https://img.shields.io/github/v/tag/crispgm/foosball-referee)
 
+<p align="center">
+  <img src="docs/screenshots/ipad-mini.png" alt="Foosball Referee on iPad mini with Catppuccin Latte" width="390">
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/iphone-16.png" alt="Foosball Referee on iPhone 16 with Catppuccin Mocha" width="200">
+</p>
+
 ## Introduction
 
 A web application for foosball referee.
