@@ -116,8 +116,10 @@ select:focus-visible {
 .btn-reset {
   background-color: var(--pause-reset-bg);
   color: var(--pause-reset-text);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
+  min-height: 2.75rem;
+  padding: 0 0.6rem;
 }
 
 .about {
